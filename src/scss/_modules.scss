@@ -1,0 +1,63 @@
+//$align, $font, $size, $weight, $color
+#modules{
+  vertical-align: top;
+  margin-bottom: 2em;
+  
+  .module{
+    padding: .5em 1.5em 2.2em 2.4em;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    background-color:$red;
+    margin-bottom: 1em;
+    h2{
+      @include fontstyle(left, $worksans, 1.4em, 400, $yellow );
+      margin-bottom: .2em;
+    }
+    
+    p{
+      @include fontstyle(left, $worksans, .9em, 400, #fff );
+      
+      &.tel{
+        font-size: 1.2em;
+      }
+    }
+    
+    .yellowBtn{
+      background-color:$yellow;
+      display: inline-block;
+      padding: .2em 1em;
+      a{
+        transition: color .2s ease-out;
+        text-decoration: none;
+        @include fontstyle(left, $worksans, 1.3em, 900, #000 );
+      
+      }
+      
+      &:hover{
+        background-color:#000;
+         a{
+          color:#fff;
+        }
+      }
+    }
+    
+    
+    &.mod1{
+      background:url('../images/taylor_made_concrete.jpg') bottom left no-repeat;
+      background-size: cover;
+    }
+    &.mod2{
+      background:url('../images/free-estimate.jpg') bottom left no-repeat;
+      background-size: cover;
+    }
+    &.mod3{
+      background:url('../images/email_list.jpg') bottom left no-repeat;
+      background-size: cover;
+    }
+    
+    
+    
+  }
+  
+}

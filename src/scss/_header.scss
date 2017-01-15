@@ -1,0 +1,203 @@
+
+
+#main-header{
+  @extend .container-fluid;
+  background-color:$headerbg;
+  
+  .main-header-wrapper{
+    @extend .container;
+    display: flex;
+    flex-flow: column;
+    
+    .logo{
+      width:100%;
+      display: block;
+      margin: .5em auto;
+      text-align: center;
+    }
+    
+    section.headerInfo{
+      span.red{
+        display: block;
+        text-align: center;
+        text-rendering: optimizeLegibility;
+        font-family: $worksans;
+        letter-spacing: 2px;
+        font-size: 1.4em;
+        font-weight: 900;
+        color:$red;
+      }
+      
+      span.yellow{
+        @extend span.red;
+        color: yellow;
+      }
+    }
+    
+    //Mobile Nav Hamburger Button
+    .mobile-nav{
+      color:$yellow;
+      text-align: right;
+      display: block;
+      span{
+        line-height: 1.4em;
+        font-size: 2em;
+       text-align: center;
+        display: inline;
+        width:50px;
+        height: 40px;
+        
+        &:hover{
+          color:#fff;
+        }
+      }
+    }
+    
+    ul#main-nav{
+      display:none;
+      width:100%;
+      margin:0;
+      padding: 0;
+      li{
+        list-style: none;
+        border-bottom: 1px solid $yellow;
+        text-align:center;
+        padding: .5em 0;
+        
+        &:first-child{
+          border-top: 1px solid $yellow;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        & a{
+          @include fontstyle(left, $worksans, 1.3em, 900, #ffffff )
+          letter-spacing:3px;
+        }
+      }
+    }
+    
+    
+    
+  }
+  
+  @media (min-width: $screen-md-min) {
+      .main-header-wrapper{
+        flex-flow: row;
+
+      .logo{
+        flex-basis: 25%;
+        text-align: center;
+        margin-top: 1em;
+      }
+      
+      section.headerInfo{
+        text-align: right;
+        margin-top: 1.3em;
+        flex-basis: 75%;
+        span.red{
+          display: inline-block;
+          text-align: right;
+          text-rendering: optimizeLegibility;
+          font-family: $worksans;
+          letter-spacing: 2px;
+          font-size: 1.1em;
+          font-weight: 900;
+          color:$red;
+        }
+
+        span.yellow{
+          display: inline-block;
+          margin-left: 1em;
+          color: yellow;
+        }
+        
+      ul#main-nav{
+      display:block;
+      width:100%;
+      margin:1em 0 0 0;
+      padding: 0;
+        
+      li{
+        display: inline-block;
+        list-style: none;
+        border-bottom: none;
+        text-align:center;
+        margin: 0;
+        padding:0;
+        border-right:1px solid $yellow;
+        
+        &:after{
+          transition: all .2s ease-out;
+          content: "";
+          display: block;
+          width: 0px;
+          height: 2px;
+          background-color: $drkgray;
+        }
+        
+        &:hover::after{
+          width:100%;
+          height: 2px;
+          background-color: $red;
+        }
+        
+        &:first-child{
+          border-top: none;
+        }
+        
+        &:last-child{
+          border-bottom: none;
+          border-right:none;
+          padding-right: 0;
+        }
+        
+        & a{
+          padding: 0 .9em;
+          text-decoration: none;
+          @include fontstyle(center, $worksans, .8em, 400, #ffffff )
+          letter-spacing:1px;
+        }
+      }
+    }
+    
+    }
+        
+    }
+  }
+  
+  
+  
+  
+  
+}
+
+#bg-header{
+  width:100%;
+  background:url('../images/header-bg.jpg') top center no-repeat #ccc;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em;
+  
+  span.cta > a{
+    transition: color .3s ease-out;
+    color:#fff;
+    font-family: $worksans;
+    display: block;
+    text-align: right;
+    padding: 0 1em;
+    font-size: 1.2em;
+    
+    &:hover{
+      color:$yellow;
+    }
+  }
+  
+  @media (min-width: $screen-md-min) {
+    min-height: 420px;  
+  }
+  
+  
+}

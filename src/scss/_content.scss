@@ -1,0 +1,64 @@
+#yellow{
+  width:100%;
+  background-color:$yellow;
+  padding: 1.5em .7em;
+  
+  h1{
+    color:$drkgray;
+    font-family: $worksans;
+    font-weight: 900;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    margin-top: 0;
+  }
+  p{
+    color:#000;
+    font-family: $worksans;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    
+    &:first-child{
+      margin-top: .5em;
+    }
+  }
+  
+  article{
+    border-top:1px solid $drkgray;
+  }
+  
+  
+  @media (min-width: $screen-md-min) {
+
+      padding: 3.5em 0;
+
+
+      h1{
+      color:$drkgray;
+      font-family: $worksans;
+      font-weight: 900;
+      text-rendering: optimizeLegibility;
+      text-align: right;
+      margin-top: 0;
+    }
+    p{
+      color:#000;
+      font-family: $worksans;
+      font-weight: 400;
+      text-rendering: optimizeLegibility;
+      
+      &:first-child{
+        margin-top: 0em;
+      }
+    }
+
+    article{
+      border-top:none;
+      border-left:1px solid $drkgray;
+    }
+
+
+
+    }
+  
+  
+}

@@ -1,0 +1,23 @@
+@mixin fontstyle($align, $font, $size, $weight, $color){
+  text-align: $align;
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  color:$color;
+  text-rendering: optimizeLegibility;
+}
+
+@import "colors";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "fonts";
+@import "header";
+@import "services";
+@import "content";
+@import "modules";
+@import "footer";
+
+
+body{
+  background-color:#fff;
+}
+

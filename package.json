@@ -1,0 +1,41 @@
+{
+  "name": "designatwork",
+  "version": "1.0.0",
+  "description": "Test Project",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass src/scss/styles.scss --output-style compressed --source-map true -o  public/css/",
+    "autoprefixer": "postcss -u autoprefixer -r public/css/styles.css",
+    "watch-sass": "nodemon -e scss -w src/scss -x 'npm run build-sass'",
+    "watch-js": "watchify src/js/index.js -x lodash -x jquery -t babelify -o public/js/client.bundle.js",
+    "build-vendor": "browserify -r lodash -r jquery -p [ minifyify --no-map ] > public/js/vendor.bundle.js",
+    "build-js": "browserify -x lodash -x jquery -t babelify -p [ minifyify --no-map ] src/js/index.js > public/js/client.bundle.js",
+    "build": "npm run build-vendor && npm run build-js && npm run build-sass && npm run autoprefixer",
+    "watch": "concurrently \"npm run watch-sass\" \"npm run watch-js\""
+  },
+  "author": "isidro gallegos",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.6.1",
+    "babelify": "^7.3.0",
+    "bootstrap-sass": "^3.3.7",
+    "concurrently": "^3.1.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "minifyify": "^7.3.4",
+    "postcss-cli": "^2.6.0",
+    "watchify": "^3.8.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "clean-css": "^3.4.23",
+    "node-sass": "^4.3.0",
+    "nodemon": "^1.11.0",
+    "uglify": "^0.1.5"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}

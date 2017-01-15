@@ -1,0 +1,104 @@
+#main-footer{
+ 
+  h4{
+    @include fontstyle(left, $worksans, 1em, 900, $red );
+  }
+  
+  p.info{
+    @include fontstyle(left, $worksans, .9em, 400, $drkgray );
+    
+    & a{
+      text-decoration: underline;
+      @include fontstyle(left, $worksans, 1em, 400, $drkgray );
+    }
+  }
+  
+  
+  
+}
+
+
+
+#socialicons{
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li{
+    list-style: none;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+
+    & a{
+      transition: all .2s ease-out;
+      display: block;
+      height: 100%;
+      width: 100%;
+      
+      &.facebook{
+      background-image:url(../images/social-sprite.png);
+      background-position: 0 0;
+        &:hover{
+          background-position: 0 -25px;
+        }
+      }
+      
+      &.linkedin{
+      background-image:url(../images/social-sprite.png);
+      background-position: -25px 0;
+        &:hover{
+          background-position: -25px -25px;
+        }
+      }
+      
+      &.instagram{
+      background-image:url(../images/social-sprite.png);
+      background-position: -50px 0;
+        &:hover{
+          background-position: -50px -25px;
+        }
+      }
+    }
+  }
+   @media (min-width: $screen-md-min) {
+     text-align: left;
+  }
+}
+
+#sitemap{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+  
+  nav{
+    flex-basis: 33%;
+  }
+  
+  ul.sitemap-links{
+    margin: 0;
+    padding: 0;
+    
+    li{
+      list-style: none;
+      text-align: left;
+      & > a{
+         @include fontstyle(left, $worksans, 1em, 900, #58595b );
+      }
+      
+      ul{
+        margin: 0;
+        padding: 0;
+        
+        li{
+          
+          & > a{
+           @include fontstyle(left, $worksans, .8em, 400, #58595b );
+          }
+        }
+      }
+      
+    }
+  }
+  
+}
